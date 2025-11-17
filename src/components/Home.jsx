@@ -1,17 +1,50 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Header from './Header';
 import HeroSection from './HeroSection';
 import SkillsSection from './SkillsSection';
 import ProjectsSection from './ProjectsSection';
 import ContactSection from './ContactSection';
 import Footer from './Footer';
+import HorizontalScroll from './HorizontalScroll';
 
 const Home = () => {
   const [darkMode, setDarkMode] = useState(false);
+  const [showHeader, setShowHeader] = useState(true);
+  const lastY = useRef(0);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
+
+  useEffect(() => {
+    const onScroll = () => {
+      const currentY = window.scrollY || 0;
+      if (currentY <= 0) {
+        setShowHeader(true);
+      } else if (currentY > lastY.current) {
+        // scrolling down -> hide
+        setShowHeader(false);
+      } else {
+        // scrolling up -> show
+        setShowHeader(true);
+      }
+      lastY.current = currentY;
+    };
+
+    const onMouseMove = (e) => {
+      if (e.clientY <= 60) {
+        setShowHeader(true);
+      }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('mousemove', onMouseMove);
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('mousemove', onMouseMove);
+    };
+  }, []);
 
   return (
     <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'bg-[#0f172a] text-[#f8fafc]' : 'bg-gray-200 text-[#1e293b]'}`}>
@@ -29,12 +62,17 @@ const Home = () => {
         </div>
       </div>
       
-      <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+      {/* Header container: sticky so layout space is preserved; hide by translating up */}
+      <div className={`sticky top-0 left-0 z-50 transition-transform duration-300 ${showHeader ? 'translate-y-0 pointer-events-auto' : '-translate-y-full pointer-events-none'}`}>
+        <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+      </div>
       <HeroSection darkMode={darkMode} />
       <SkillsSection darkMode={darkMode} />
       <ProjectsSection darkMode={darkMode} />
+      <HorizontalScroll darkMode={darkMode} />
       <ContactSection darkMode={darkMode} />
       <Footer darkMode={darkMode} />
+      
       
       {/* Custom cursor */}
       <style jsx>{`

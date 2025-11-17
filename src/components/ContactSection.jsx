@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-const ContactSection = ({ darkMode }) => {
+export default function ContactSection({ darkMode, language = "en" }) {
   const [form, setForm] = useState({ nom: "", email: "", message: "" });
   const [status, setStatus] = useState(null);
   const [showPopup, setShowPopup] = useState(false);
@@ -20,25 +20,25 @@ const ContactSection = ({ darkMode }) => {
         body: JSON.stringify(form),
       });
       if (response.ok) {
-  setStatus("success");
-  setForm({ nom: "", email: "", message: "" });
-} else {
-  setStatus("error");
-  const data = await response.json();
-  if (data && data.errors) {
-    const errors = Object.values(data.errors)
-      .map((arr) => arr.join(" "))
-      .join(" ");
-    setErrorMsg(errors);
-  } else if (data && data.detail) {
-    setErrorMsg(data.detail);
-  } else {
-    setErrorMsg("Erreur inconnue.");
-  }
-}
+        setStatus("success");
+        setForm({ nom: "", email: "", message: "" });
+      } else {
+        setStatus("error");
+        const data = await response.json();
+        if (data && data.errors) {
+          const errors = Object.values(data.errors)
+            .map((arr) => arr.join(" "))
+            .join(" ");
+          setErrorMsg(errors);
+        } else if (data && data.detail) {
+          setErrorMsg(data.detail);
+        } else {
+          setErrorMsg("Erreur inconnue.");
+        }
+      }
     } catch {
       setStatus("error");
-  setErrorMsg("Erreur réseau ou serveur : " + err.message);
+      setErrorMsg("Erreur réseau ou serveur : " + err.message);
     }
     setShowPopup(true);
     setTimeout(() => setShowPopup(false), 3000);
@@ -65,18 +65,21 @@ const ContactSection = ({ darkMode }) => {
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold mb-16 text-center">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-500">
-            Get In Touch
+            {language === "fr" ? "Contact" : "Get In Touch"}
           </span>
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div>
-            <h3 className="text-2xl font-bold mb-6">Let's Connect</h3>
+            <h3 className="text-2xl font-bold mb-6">
+              {language === "fr" ? "Entrons en contact" : "Let's Connect"}
+            </h3>
             <p
               className={`mb-8 ${darkMode ? "text-gray-300" : "text-gray-600"}`}
             >
-              I'm always open to discussing new projects, creative ideas or
-              opportunities to be part of your vision.
+              {language === "fr"
+                ? "Je suis toujours ouvert à discuter de nouveaux projets, d'idées créatives ou d'opportunités de faire partie de votre vision."
+                : "I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision."}
             </p>
 
             <div className="space-y-4">
@@ -180,7 +183,7 @@ const ContactSection = ({ darkMode }) => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block mb-2 font-medium">
-                    Name
+                    {language === "fr" ? "Nom" : "Name"}
                   </label>
                   <input
                     type="text"
@@ -193,13 +196,15 @@ const ContactSection = ({ darkMode }) => {
                         ? "bg-[#1e293b] text-[#f8fafc]"
                         : "bg-gray-200 text-[#1e293b]"
                     }`}
-                    placeholder="Your name"
+                    placeholder={
+                      language === "fr" ? "Votre nom" : "Your name"
+                    }
                     required
                   />
                 </div>
                 <div>
                   <label htmlFor="email" className="block mb-2 font-medium">
-                    Email
+                    {language === "fr" ? "Email" : "Email"}
                   </label>
                   <input
                     type="email"
@@ -212,14 +217,16 @@ const ContactSection = ({ darkMode }) => {
                         ? "bg-[#1e293b] text-[#f8fafc]"
                         : "bg-gray-200 text-[#1e293b]"
                     }`}
-                    placeholder="Your email"
+                    placeholder={
+                      language === "fr" ? "Votre email" : "Your email"
+                    }
                     required
                   />
                 </div>
               </div>
               <div>
                 <label htmlFor="message" className="block mb-2 font-medium">
-                  Message
+                  {language === "fr" ? "Message" : "Message"}
                 </label>
                 <textarea
                   id="message"
@@ -232,7 +239,9 @@ const ContactSection = ({ darkMode }) => {
                       ? "bg-[#1e293b] text-[#f8fafc]"
                       : "bg-gray-200 text-[#1e293b]"
                   }`}
-                  placeholder="Your message"
+                  placeholder={
+                    language === "fr" ? "Votre message" : "Your message"
+                  }
                   required
                 ></textarea>
               </div>
@@ -240,7 +249,7 @@ const ContactSection = ({ darkMode }) => {
                 type="submit"
                 className="px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-500 text-white font-medium rounded-full !rounded-button whitespace-nowrap hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300 cursor-pointer"
               >
-                Send Message
+                {language === "fr" ? "Envoyer le message" : "Send Message"}
               </button>
             </form>
           </div>
@@ -248,6 +257,4 @@ const ContactSection = ({ darkMode }) => {
       </div>
     </section>
   );
-};
-
-export default ContactSection;
+}

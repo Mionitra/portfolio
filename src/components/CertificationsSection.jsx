@@ -1,19 +1,19 @@
 import React from 'react';
 
-export default function CertificationsSection({ darkMode = true }) {
+export default function CertificationsSection({ darkMode = true, language = 'en' }) {
   const certifications = [
     {
-      name: "English for Business and Entrepreneurship",
+      name: language === 'fr' ? "Anglais pour les affaires et l'entrepreneuriat" : "English for Business and Entrepreneurship",
       icon: "☁️",
       image: "/images/certificats/be.png"
     },
     {
-      name: "English for Career Development",
+      name: language === 'fr' ? "Anglais pour le développement de carrière" : "English for Career Development",
       icon: "🎯",
       image: "/images/certificats/cd.png"
     },
     {
-      name: "English for STEM",
+      name: language === 'fr' ? "Anglais pour les STEM" : "English for STEM",
       icon: "⚡",
       image: "/images/certificats/stem.png"
     }
@@ -24,14 +24,14 @@ export default function CertificationsSection({ darkMode = true }) {
       <div className="w-full">
         {/* Titre */}
         <h2 className={`text-5xl font-bold text-center mb-6 ${darkMode ? 'text-white' : 'text-slate-900'}`}>
-          My Certifications
+          {language === 'fr' ? 'Mes certifications' : 'My Certifications'}
         </h2>
         
         {/* Paragraphe */}
         <p className={`text-center text-lg mb-12 mx-10 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-          Notre équipe possède des certifications reconnues dans l'industrie, 
-          garantissant une expertise technique de premier ordre et des solutions 
-          de qualité professionnelle pour vos projets.
+          {language === 'fr'
+            ? "Notre équipe possède des certifications reconnues dans l'industrie, garantissant une expertise technique de premier ordre et des solutions de qualité professionnelle pour vos projets."
+            : "Our team holds industry-recognized certifications, ensuring top-tier technical expertise and professional-quality solutions for your projects."}
         </p>
         
         {/* Images de certifications */}

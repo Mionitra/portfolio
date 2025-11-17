@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import * as echarts from 'echarts';
 
-const SkillsSection = ({ darkMode }) => {
+export default function SkillsSection({ darkMode, language = 'en' }) {
   useEffect(() => {
     const frameworks = ['React', 'Sass', 'Django', 'TailwindCSS'];
     const proficiencies = [95, 73, 82, 90];
@@ -68,7 +68,9 @@ const SkillsSection = ({ darkMode }) => {
     <section id="skills" className={`py-20 ${darkMode ? 'bg-[#0f172a]' : 'bg-[#f0fff1]'}`}>
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold mb-16 text-center">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-500">Framework Experience</span>
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-500">
+            {language === 'fr' ? 'Expérience avec les Frameworks' : 'Framework Experience'}
+          </span>
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -131,5 +133,3 @@ const SkillsSection = ({ darkMode }) => {
     </section>
   );
 };
-
-export default SkillsSection;

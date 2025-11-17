@@ -6,7 +6,7 @@ import CursorPage from "./cursor/CursorPage";
 import CertificationsSection from "./CertificationsSection";
 import HackathonPortfolio from "./HackathonPortfolio";
 
-const HorizontalScroll = ({ children1, children2, darkMode }) => {
+const HorizontalScroll = ({ children1, children2, darkMode, language = 'en' }) => {
   gsap.registerPlugin(ScrollTrigger);
   const sectionRef = useRef(null);
   const triggerRef = useRef(null);
@@ -98,7 +98,7 @@ const HorizontalScroll = ({ children1, children2, darkMode }) => {
               <div className="w-full overflow-auto max-h-screen">
                 {/* PDFViewer centré */}
                 <div className="">
-                  <CertificationsSection darkMode={darkMode} />
+                  <CertificationsSection darkMode={darkMode} language={language} />
                 </div>
               </div>
             </section>
@@ -114,7 +114,7 @@ const HorizontalScroll = ({ children1, children2, darkMode }) => {
         </div>
       </div>
       <div className="next-section overflow-x-hidden" ref={nextSection}>
-        <HackathonPortfolio darkMode={darkMode} />
+        <HackathonPortfolio darkMode={darkMode} language={language} />
       </div>
     </>
   );

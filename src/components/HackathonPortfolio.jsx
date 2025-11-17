@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Trophy, Award, Heart, Code, Calendar, Users } from 'lucide-react';
 
-export default function HackathonPortfolio({ darkMode = true }) {
+export default function HackathonPortfolio({ darkMode = true, language = 'en' }) {
   const [hoveredId, setHoveredId] = useState(null);
 
   useEffect(() => {
@@ -31,66 +31,78 @@ export default function HackathonPortfolio({ darkMode = true }) {
       id: 1,
       title: "DevFest Antsirabe",
       date: "Oct 18–19, 2025",
-      rank: "1st place",
+      rank: language === 'fr' ? "1er prix" : "1st place",
       icon: Trophy,
       color: "from-blue-500 to-purple-600",
       badge: "🥇",
-      description: "Web application using AI to suggest business ideas and track their evolution.",
+      description: language === 'fr'
+        ? "Application web utilisant l'IA pour proposer des idées d'entreprise et suivre leur évolution."
+        : "Web application using AI to suggest business ideas and track their evolution.",
       tags: ["AI", "Business", "Web App"]
     },
     {
       id: 2,
       title: "INSI DevWeb Hackathon",
       date: "Feb 2025",
-      rank: "3rd place",
+      rank: language === 'fr' ? "3e place" : "3rd place",
       icon: Award,
       color: "from-purple-500 to-blue-600",
       badge: "🥉",
-      description: "Web application for tracking endemic animals in nature reserves and monitoring deforestation.",
+      description: language === 'fr'
+        ? "Application web pour le suivi des animaux endémiques dans les réserves naturelles et la surveillance de la déforestation."
+        : "Web application for tracking endemic animals in nature reserves and monitoring deforestation.",
       tags: ["Ecology", "Conservation", "Web"]
     },
     {
       id: 3,
       title: "Stupid Hackathon",
       date: "Jul 26, 2025",
-      rank: "Jury's favorite",
+      rank: language === 'fr' ? "Coup de cœur du jury" : "Jury's favorite",
       icon: Heart,
       color: "from-blue-600 to-purple-500",
       badge: "❤️",
-      description: "Humorous project presented at an unconventional hackathon.",
+      description: language === 'fr'
+        ? "Projet humoristique présenté lors d'un hackathon non conventionnel."
+        : "Humorous project presented at an unconventional hackathon.",
       tags: ["Fun", "Creativity", "Innovation"]
     },
     {
       id: 4,
       title: "MAT",
       date: "Aug 2025",
-      rank: "Participation",
+      rank: language === 'fr' ? "Participation" : "Participation",
       icon: Code,
       color: "from-purple-600 to-blue-500",
       badge: "💻",
-      description: "Solving complex algorithms in Python under time constraints.",
+      description: language === 'fr'
+        ? "Résolution d'algorithmes complexes en Python sous contrainte de temps."
+        : "Solving complex algorithms in Python under time constraints.",
       tags: ["Python", "Algorithms", "Performance"]
     },
     {
       id: 5,
       title: "Webcup Madagascar",
       date: "May 2025",
-      rank: "Participation",
+      rank: language === 'fr' ? "Participation" : "Participation",
       icon: Calendar,
       color: "from-blue-500 to-purple-500",
       badge: "⚡",
-      description: "24-hour development of 'The End Page', a platform for writing a final message before a definitive departure.",
+      description: language === 'fr'
+        ? "Développement en 24 heures de 'The End Page', une plateforme pour rédiger un message final avant un départ définitif."
+        : "24-hour development of 'The End Page', a platform for writing a final message before a definitive departure.",
       tags: ["24h", "Challenge", "Platform"]
     },
     {
       id: 6,
       title: "Redshalk Hackathon",
       date: "Nov 29, 2024",
-      rank: "Participation",
+      rank: language === 'fr' ? "Participation" : "Participation",
       icon: Users,
       color: "from-purple-500 to-blue-600",
       badge: "🐷",
-      description: "Application for tracking pig breeds and farm management.",
+      description: language === 'fr'
+        ? "Application pour le suivi des races de porcs et la gestion des exploitations."
+        : "Application for tracking pig breeds and farm management.",
       tags: ["AgriTech", "Management", "Tracking"]
     }
   ];
@@ -101,11 +113,11 @@ export default function HackathonPortfolio({ darkMode = true }) {
         {/* Header */}
         <div className="text-center mb-16 animate-fadeIn">
           <h1 className={`text-5xl md:text-6xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-slate-900'}`}>
-            Hackathons & Projects
+            {language === 'fr' ? 'Hackathons et projets' : 'Hackathons & Projects'}
           </h1>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-6 rounded-full"></div>
           <p className={`text-lg max-w-2xl mx-auto ${darkMode ? 'text-gray-400' : 'text-gray-700'}`}>
-            A collection of challenges tackled, innovations created, and awards won
+            {language === 'fr' ? "Une collection de défis relevés, d'innovations créées et de récompenses obtenues" : "A collection of challenges tackled, innovations created, and awards won"}
           </p>
         </div>
 
@@ -192,13 +204,13 @@ export default function HackathonPortfolio({ darkMode = true }) {
         {/* Stats Footer */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
-            { label: "Hackathons", value: "6", icon: Trophy },
-            { label: "Awards won", value: "3", icon: Award },
-            { label: "Projects created", value: "6", icon: Code },
-            { label: "Hours of code", value: "100+", icon: Calendar }
+            { label: language === 'fr' ? "Hackathons" : "Hackathons", value: "6", icon: Trophy },
+            { label: language === 'fr' ? "Récompenses" : "Awards won", value: "3", icon: Award },
+            { label: language === 'fr' ? "Projets créés" : "Projects created", value: "6", icon: Code },
+            { label: language === 'fr' ? "Heures de code" : "Hours of code", value: "100+", icon: Calendar }
           ].map((stat, i) => {
-            const StatIcon = stat.icon;
-            return (
+             const StatIcon = stat.icon;
+             return (
               <div
                 key={i}
                 className={`text-center p-6 rounded-xl hover:transition-all hover:duration-300 hover:scale-105 ${darkMode ? 'bg-slate-800/30 border border-slate-700/50 hover:bg-slate-800/50' : 'bg-white border border-slate-200 hover:bg-white/80'}`}
@@ -209,10 +221,10 @@ export default function HackathonPortfolio({ darkMode = true }) {
                 <StatIcon className={`w-8 h-8 mx-auto mb-2 ${darkMode ? 'text-blue-400' : 'text-blue-600'}`} />
                 <div className={`text-3xl font-bold mb-1 ${darkMode ? 'text-white' : 'text-slate-900'}`}>{stat.value}</div>
                 <div className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>{stat.label}</div>
-              </div>
-             );
-           })}
-         </div>
+               </div>
+              );
+            })}
+          </div>
        </div>
  
        <style jsx>{`

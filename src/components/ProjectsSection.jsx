@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import projects from './data/projects'; 
 
-const ProjectsSection = ({ darkMode }) => {
+export default function ProjectsSection({ darkMode, language = 'en' }) {
   
   
   const [activeFilter, setActiveFilter] = useState('All');
@@ -14,7 +14,7 @@ const ProjectsSection = ({ darkMode }) => {
     <section id="projects" className={`py-20 ${darkMode ? 'bg-[#1e293b]' : 'bg-[#e9ecef]'}`}>
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold mb-16 text-center">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-500">Projects</span>
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-500">{language === 'fr' ? 'Projets sélectionnés' : 'Selected Projects'}</span>
         </h2>
         
         <div className="flex justify-center mb-10 flex-wrap gap-4">
@@ -106,5 +106,3 @@ const ProjectsSection = ({ darkMode }) => {
     </section>
   );
 };
-
-export default ProjectsSection;

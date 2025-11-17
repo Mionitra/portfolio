@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
-const HeroSection = ({ darkMode }) => {
+const HeroSection = ({ darkMode, language = 'en' }) => {
   const [typedText, setTypedText] = useState('');
   const [cursorVisible, setCursorVisible] = useState(true);
   
-  const fullText = "Full-stack developer specializing in modern web technologies";
+  const fullText = language === 'fr' 
+    ? "Développeur full‑stack créant des applications web modernes" 
+    : "Full-stack developer specializing in modern web technologies";
   
   useEffect(() => {
     let index = 0;
@@ -26,7 +28,7 @@ const HeroSection = ({ darkMode }) => {
       clearInterval(typingInterval);
       clearInterval(cursorInterval);
     };
-  }, []);
+  }, [fullText]);
 
   return (
     <section id="home" className="relative min-h-[calc(100vh-80px)] flex justify-around flex-col md:flex-row-reverse items-center md:px-20">
@@ -64,7 +66,7 @@ const HeroSection = ({ darkMode }) => {
             href="#contact" 
             className={`inline-block px-8 py-3 rounded-full !rounded-button whitespace-nowrap text-white font-medium transition-all duration-300 bg-gradient-to-r from-purple-600 to-blue-500 hover:shadow-lg hover:shadow-purple-500/30 cursor-pointer`}
           >
-            Get in touch
+            {language === 'fr' ? "Contactez‑moi" : "Get in touch"}
           </a>
         </div>
       </div>

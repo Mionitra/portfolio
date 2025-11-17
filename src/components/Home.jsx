@@ -9,6 +9,7 @@ import HorizontalScroll from './HorizontalScroll';
 
 const Home = () => {
   const [darkMode, setDarkMode] = useState(false);
+  const [lang, setLang] = useState('en'); // 'en' or 'fr'
   const [showHeader, setShowHeader] = useState(true);
   const lastY = useRef(0);
 
@@ -64,14 +65,15 @@ const Home = () => {
       
       {/* Header container: sticky so layout space is preserved; hide by translating up */}
       <div className={`sticky top-0 left-0 z-50 transition-transform duration-300 ${showHeader ? 'translate-y-0 pointer-events-auto' : '-translate-y-full pointer-events-none'}`}>
-        <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+        <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} language={lang} setLanguage={setLang} />
       </div>
-      <HeroSection darkMode={darkMode} />
-      <SkillsSection darkMode={darkMode} />
-      <ProjectsSection darkMode={darkMode} />
-      <HorizontalScroll darkMode={darkMode} />
-      <ContactSection darkMode={darkMode} />
-      <Footer darkMode={darkMode} />
+      
+      <HeroSection darkMode={darkMode} language={lang} />
+      <SkillsSection darkMode={darkMode} language={lang} />
+      <ProjectsSection darkMode={darkMode} language={lang} />
+      <HorizontalScroll darkMode={darkMode} language={lang} />
+      <ContactSection darkMode={darkMode} language={lang} />
+      <Footer darkMode={darkMode} language={lang} />
       
       
       {/* Custom cursor */}

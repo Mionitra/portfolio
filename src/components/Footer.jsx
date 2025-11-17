@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Footer = ({ darkMode }) => {
+export default function Footer({ darkMode, language = 'en' }) {
   return (
     <footer className={`py-10 ${darkMode ? 'bg-[#1e293b]' : 'bg-[#e9ecef]'}`}>
       <div className="container mx-auto px-4">
@@ -9,7 +9,7 @@ const Footer = ({ darkMode }) => {
           
           <div className="flex items-center gap-4">
             <div className={`${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-              © {new Date().getFullYear()} Mionitra. All rights reserved.
+              {language === 'fr' ? '© 2025 — Tous droits réservés' : '© 2025 — All rights reserved'}
             </div>
             
           </div>
@@ -26,5 +26,3 @@ const Footer = ({ darkMode }) => {
     </footer>
   );
 };
-
-export default Footer;

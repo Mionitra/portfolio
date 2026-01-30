@@ -49,27 +49,14 @@ export default function ContactSection({ darkMode, language = "en" }) {
       id="contact"
       className={`py-20 ${darkMode ? "bg-[#0f172a]" : "bg-[#f0fff1]"}`}
     >
-      {showPopup && (
-        <div
-          className={`fixed top-8 left-1/2 transform -translate-x-1/2 z-50 px-6 py-3 rounded shadow-lg font-semibold ${
-            status === "success"
-              ? "bg-green-500 text-white"
-              : "bg-red-500 text-white"
-          }`}
-        >
-          {status === "success"
-            ? "Message envoyé avec succès !"
-            : "Erreur lors de l'envoi du message."}
-        </div>
-      )}
-      <div className="container mx-auto px-4">
+      <div className="w-1/2 mx-auto px-4">
         <h2 className="text-4xl font-bold mb-16 text-center">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-500">
             {language === "fr" ? "Contact" : "Get In Touch"}
           </span>
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 gap-12">
           <div>
             <h3 className="text-2xl font-bold mb-6">
               {language === "fr" ? "Entrons en contact" : "Let's Connect"}
@@ -178,81 +165,6 @@ export default function ContactSection({ darkMode, language = "en" }) {
             </div>
           </div>
 
-          <div>
-            <form className="space-y-6" onSubmit={handleSubmit}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block mb-2 font-medium">
-                    {language === "fr" ? "Nom" : "Name"}
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="nom"
-                    value={form.nom}
-                    onChange={handleChange}
-                    className={`w-full px-4 py-3 rounded-lg border-none focus:ring-2 focus:ring-[#6366f1] outline-none ${
-                      darkMode
-                        ? "bg-[#1e293b] text-[#f8fafc]"
-                        : "bg-gray-200 text-[#1e293b]"
-                    }`}
-                    placeholder={
-                      language === "fr" ? "Votre nom" : "Your name"
-                    }
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block mb-2 font-medium">
-                    {language === "fr" ? "Email" : "Email"}
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={form.email}
-                    onChange={handleChange}
-                    className={`w-full px-4 py-3 rounded-lg border-none focus:ring-2 focus:ring-[#6366f1] outline-none ${
-                      darkMode
-                        ? "bg-[#1e293b] text-[#f8fafc]"
-                        : "bg-gray-200 text-[#1e293b]"
-                    }`}
-                    placeholder={
-                      language === "fr" ? "Votre email" : "Your email"
-                    }
-                    required
-                  />
-                </div>
-              </div>
-              <div>
-                <label htmlFor="message" className="block mb-2 font-medium">
-                  {language === "fr" ? "Message" : "Message"}
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  value={form.message}
-                  onChange={handleChange}
-                  className={`w-full px-4 py-3 rounded-lg border-none focus:ring-2 focus:ring-[#6366f1] outline-none ${
-                    darkMode
-                      ? "bg-[#1e293b] text-[#f8fafc]"
-                      : "bg-gray-200 text-[#1e293b]"
-                  }`}
-                  placeholder={
-                    language === "fr" ? "Votre message" : "Your message"
-                  }
-                  required
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                className="px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-500 text-white font-medium rounded-full !rounded-button whitespace-nowrap hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300 cursor-pointer"
-              >
-                {language === "fr" ? "Envoyer le message" : "Send Message"}
-              </button>
-            </form>
-          </div>
         </div>
       </div>
     </section>

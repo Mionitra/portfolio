@@ -1,6 +1,8 @@
 import React from 'react';
 
 export default function Footer({ darkMode, language = 'en' }) {
+  const year = new Date().getFullYear();
+
   return (
     <footer className={`py-10 ${darkMode ? 'bg-[#1e293b]' : 'bg-[#e9ecef]'}`}>
       <div className="container mx-auto px-4">
@@ -9,7 +11,7 @@ export default function Footer({ darkMode, language = 'en' }) {
           
           <div className="flex items-center gap-4">
             <div className={`${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-              {language === 'fr' ? '© 2025 — Tous droits réservés' : '© 2025 — All rights reserved'}
+              {language === 'fr' ? `© ${year} — Tous droits réservés` : `© ${year} — All rights reserved`}
             </div>
             
           </div>

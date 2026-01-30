@@ -32,7 +32,7 @@ const HeroSection = ({ darkMode, language = 'en' }) => {
 
   return (
     <section id="home" className="relative min-h-[calc(100vh-80px)] flex justify-around flex-col md:flex-row-reverse items-center md:px-20">
-      <img src="/media/images/Mionitra1.png" alt="" className='md:h-96 h-56 mx-auto' />
+      <img src="/media/images/Mionitra3.png" alt="" className='md:h-96 h-56 mx-auto' />
       
       <div className="container mx-auto px-4 z-10">
         <div className="max-w-2xl">

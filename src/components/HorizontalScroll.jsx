@@ -106,7 +106,7 @@ const HorizontalScroll = ({ children1, children2, darkMode, language = 'en' }) =
             {/* Deuxième section existante */}
             <section
               className={`section-2 w-screen h-screen relative bg-cover bg-center ${darkMode ? 'bg-opacity-80' : ''}`}
-              style={{ backgroundImage: "url('/img/gallery-2.webp')" }}
+              // style={{ backgroundImage: "url('/img/gallery-2.webp')" }}
             >
              <CursorPage />
             </section>

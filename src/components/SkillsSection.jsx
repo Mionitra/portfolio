@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import * as echarts from 'echarts';
 import * as LucideIcons from 'lucide-react';
-import skillsData from './data/Skills';
+import skillsData from './data/skillsSection';
 import translations from './data/translation';
 
 export default function SkillsSection({ darkMode, language = 'en' }) {

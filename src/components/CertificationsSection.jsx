@@ -74,31 +74,17 @@ export default function CertificationsSection({ darkMode = true, language = 'en'
           className="w-full h-full object-contain rounded-lg shadow-2xl"
         />
       </div>
-
-      {/* Instructions */}
-      <div className="absolute bottom-6 left-0 right-0 text-center">
-        <p className="text-gray-400 text-sm">
-          {language === 'fr' ? 'Cliquez n\'importe où pour fermer' : 'Click anywhere to close'}
-        </p>
-      </div>
     </div>
   );
 
   return (
     <>
-      <div className={`py-20 px-4 ${darkMode ? 'bg-gradient-to-b from-gray-900 to-black' : 'bg-gradient-to-b from-gray-50 to-white'}`}>
+      <div className={`py-20 px-4 ${darkMode ? 'bg-gradient-to-b from-gray-900 to-black' : 'bg-gradient-to-b from-gray-50 to-white'} overflow-hidden`}>
         <div className="max-w-7xl mx-auto">
           {/* Titre */}
           <h2 className={`text-4xl md:text-5xl font-bold text-center mb-6 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
             {language === 'fr' ? 'Mes certifications' : 'My Certifications'}
           </h2>
-
-          {/* Paragraphe */}
-          <p className={`text-center text-lg mb-16 max-w-3xl mx-auto ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-            {language === 'fr' 
-              ? "Notre équipe possède des certifications reconnues dans l'industrie, garantissant une expertise technique de premier ordre et des solutions de qualité professionnelle pour vos projets." 
-              : "Our team holds industry-recognized certifications, ensuring top-tier technical expertise and professional-quality solutions for your projects."}
-          </p>
 
           {/* Images de certifications */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import NameReveal from './texts/NameReveal';
 
 const HeroSection = ({ darkMode, language = 'en' }) => {
   const [typedText, setTypedText] = useState('');
@@ -36,8 +37,7 @@ const HeroSection = ({ darkMode, language = 'en' }) => {
       
       <div className="container mx-auto px-4 z-10">
         <div className="max-w-2xl">
-          <h1 className="text-3xl md:text-5xl font-bold mb-6">RAKOTONDRADAORO Lova</h1>
-          <h1 className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-500 animate-gradient">Mionitra</h1>
+          <NameReveal/>
           <div className="text-xl md:text-2xl mb-8">
             <span>{typedText}</span>
             <span className={`ml-1 inline-block w-2 h-6 bg-[#6366f1] ${cursorVisible ? 'opacity-100' : 'opacity-0'}`}></span>
@@ -64,7 +64,7 @@ const HeroSection = ({ darkMode, language = 'en' }) => {
           
           <a 
             href="#contact" 
-            className={`inline-block px-8 py-3 rounded-full !rounded-button whitespace-nowrap text-white font-medium transition-all duration-300 bg-gradient-to-r from-purple-600 to-blue-500 hover:shadow-lg hover:shadow-purple-500/30 cursor-pointer`}
+            className={`inline-block px-8 py-3 rounded-full !rounded-button whitespace-nowrap text-white font-medium transition-all duration-300 bg-gradient-to-r from-blue-600 to-cyan-500 hover:shadow-lg hover:shadow-purple-500/30 cursor-pointer`}
           >
             {language === 'fr' ? "Contactez‑moi" : "Get in touch"}
           </a>

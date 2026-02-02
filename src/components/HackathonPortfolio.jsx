@@ -112,10 +112,9 @@ export default function HackathonPortfolio({ darkMode = true, language = 'en' })
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 animate-fadeIn">
-          <h1 className={`text-5xl md:text-6xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-slate-900'}`}>
+          <h1 className={`text-3xl md:text-6xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-slate-900'}`}>
             {language === 'fr' ? 'Hackathons et projets' : 'Hackathons & Projects'}
           </h1>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-6 rounded-full"></div>
           <p className={`text-lg max-w-2xl mx-auto ${darkMode ? 'text-gray-400' : 'text-gray-700'}`}>
             {language === 'fr' ? "Une collection de défis relevés, d'innovations créées et de récompenses obtenues" : "A collection of challenges tackled, innovations created, and awards won"}
           </p>
@@ -141,22 +140,18 @@ export default function HackathonPortfolio({ darkMode = true, language = 'en' })
                 <div className="card-border"></div>
                 
                 {/* Card Content */}
-                <div className={`card-content relative h-full rounded-2xl p-6 overflow-hidden ${darkMode ? 'bg-slate-800/50 backdrop-blur-sm' : 'bg-white/80 border border-slate-200'}`}>
+                <div className={`hover:shadow-md hover:shadow-cyan-600 hover:-translate-y-5 duration-500 card-content relative h-full rounded-2xl p-6 overflow-hidden ${darkMode ? 'bg-slate-800/50 backdrop-blur-sm' : 'bg-white/80 border border-slate-200'}`}>
                   {/* Content */}
                   <div className="relative z-10">
                     {/* Header with icon and badge */}
                     <div className="flex items-start justify-between mb-4">
                       <div className={`
-                        p-3 rounded-xl bg-gradient-to-br ${project.color}
+                        p-3 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-500
                         transform transition-transform duration-500
                         ${isHovered ? 'scale-110 rotate-6' : ''}
                       `}>
                         <Icon className="w-6 h-6 text-white" />
                       </div>
-                      <span className={`text-3xl transform transition-transform duration-500
-                                      ${isHovered ? 'scale-125 rotate-12' : ''}`}>
-                        {project.badge}
-                      </span>
                     </div>
  
                     {/* Title */}
@@ -172,7 +167,7 @@ export default function HackathonPortfolio({ darkMode = true, language = 'en' })
                       </span>
                       <span className={`
                         inline-flex items-center gap-2 text-sm font-semibold px-3 py-1 rounded-full
-                        bg-gradient-to-r ${project.color} text-white w-fit
+                        bg-gradient-to-r from-blue-600 to-cyan-500 text-white w-fit
                       `}>
                         {project.rank}
                       </span>
@@ -206,7 +201,7 @@ export default function HackathonPortfolio({ darkMode = true, language = 'en' })
           {[
             { label: language === 'fr' ? "Hackathons" : "Hackathons", value: "6", icon: Trophy },
             { label: language === 'fr' ? "Récompenses" : "Awards won", value: "3", icon: Award },
-            { label: language === 'fr' ? "Projets créés" : "Projects created", value: "6", icon: Code },
+            { label: language === 'fr' ? "Projets créés" : "Projects created", value: "10+", icon: Code },
             { label: language === 'fr' ? "Heures de code" : "Hours of code", value: "100+", icon: Calendar }
           ].map((stat, i) => {
              const StatIcon = stat.icon;

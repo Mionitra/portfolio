@@ -53,7 +53,7 @@ const skillsData = (language = 'en') => [
   {
     name: 'TailwindCSS',
     category: 'frontend',
-    proficiency: 90,
+    proficiency: 95,
     icon: 'Wind',
     iconColor: 'text-cyan-400',
     keySkills: language === 'fr'
@@ -85,7 +85,7 @@ const skillsData = (language = 'en') => [
   {
     name: 'Django',
     category: 'backend',
-    proficiency: 82,
+    proficiency: 80,
     icon: 'Server',
     iconColor: 'text-green-700',
     keySkills: language === 'fr'
@@ -95,7 +95,7 @@ const skillsData = (language = 'en') => [
   {
     name: 'Spring Boot',
     category: 'backend',
-    proficiency: 78,
+    proficiency: 70,
     icon: 'Leaf',
     iconColor: 'text-green-600',
     keySkills: language === 'fr'
@@ -105,7 +105,7 @@ const skillsData = (language = 'en') => [
   {
     name: 'PHP',
     category: 'backend',
-    proficiency: 75,
+    proficiency: 70,
     icon: 'Code',
     iconColor: 'text-indigo-400',
     keySkills: language === 'fr'
@@ -117,7 +117,7 @@ const skillsData = (language = 'en') => [
   {
     name: 'React Native',
     category: 'mobile',
-    proficiency: 85,
+    proficiency: 70,
     icon: 'Smartphone',
     iconColor: 'text-blue-400',
     keySkills: language === 'fr'
@@ -127,7 +127,7 @@ const skillsData = (language = 'en') => [
   {
     name: 'Flutter',
     category: 'mobile',
-    proficiency: 80,
+    proficiency: 70,
     icon: 'Zap',
     iconColor: 'text-blue-500',
     keySkills: language === 'fr'
@@ -149,7 +149,7 @@ const skillsData = (language = 'en') => [
   {
     name: 'PostgreSQL',
     category: 'database',
-    proficiency: 83,
+    proficiency: 90,
     icon: 'DatabaseZap',
     iconColor: 'text-blue-700',
     keySkills: language === 'fr'
@@ -159,7 +159,7 @@ const skillsData = (language = 'en') => [
   {
     name: 'Oracle',
     category: 'database',
-    proficiency: 75,
+    proficiency: 70,
     icon: 'HardDrive',
     iconColor: 'text-red-600',
     keySkills: language === 'fr'
@@ -191,7 +191,7 @@ const skillsData = (language = 'en') => [
   {
     name: 'UI/UX Design',
     category: 'others',
-    proficiency: 82,
+    proficiency: 85,
     icon: 'Figma',
     iconColor: 'text-purple-500',
     keySkills: language === 'fr'

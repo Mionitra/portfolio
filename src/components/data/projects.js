@@ -1,4 +1,4 @@
-const projects = [
+const projectsHackathon = [
     {
       id: 1,
       title: "Travel Booking System",
@@ -46,4 +46,4 @@ const projects = [
     }
   ];
 
-  export default projects;
+  export default projectsHackathon;

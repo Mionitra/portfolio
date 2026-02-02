@@ -1,3 +1,4 @@
+import { Facebook, Github, Globe, Linkedin, Mail, MapPin } from "lucide-react";
 import React from "react";
 import { useState } from "react";
 
@@ -49,9 +50,9 @@ export default function ContactSection({ darkMode, language = "en" }) {
       id="contact"
       className={`py-20 ${darkMode ? "bg-[#0f172a]" : "bg-[#f0fff1]"}`}
     >
-      <div className="w-1/2 mx-auto px-4">
+      <div className="w-full md:w-1/2 mx-auto px-4">
         <h2 className="text-4xl font-bold mb-16 text-center">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-500">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500">
             {language === "fr" ? "Contact" : "Get In Touch"}
           </span>
         </h2>
@@ -76,7 +77,7 @@ export default function ContactSection({ darkMode, language = "en" }) {
                     darkMode ? "bg-[#1e293b]" : "bg-[#e9ecef]"
                   }`}
                 >
-                  <i className="fas fa-envelope text-[#6366f1]"></i>
+                  <Mail className="text-[#6366f1]" />
                 </div>
                 <div>
                   <h4 className="font-semibold">Email</h4>
@@ -96,7 +97,7 @@ export default function ContactSection({ darkMode, language = "en" }) {
                     darkMode ? "bg-[#1e293b]" : "bg-[#e9ecef]"
                   }`}
                 >
-                  <i className="fas fa-map-marker-alt text-[#6366f1]"></i>
+                  <MapPin className="text-[#6366f1]" />
                 </div>
                 <div>
                   <h4 className="font-semibold">Location</h4>
@@ -105,7 +106,7 @@ export default function ContactSection({ darkMode, language = "en" }) {
                       darkMode ? "text-gray-300" : "text-gray-600"
                     }`}
                   >
-                    Madagascar, Antananarivo
+                    Madagascar, Antananarivo, Tanjombato
                   </p>
                 </div>
               </div>
@@ -116,7 +117,7 @@ export default function ContactSection({ darkMode, language = "en" }) {
                     darkMode ? "bg-[#1e293b]" : "bg-[#e9ecef]"
                   }`}
                 >
-                  <i className="fas fa-globe text-[#6366f1]"></i>
+                  <Globe className="text-[#6366f1]" />
                 </div>
                 <div>
                   <h4 className="font-semibold">Website</h4>
@@ -140,7 +141,7 @@ export default function ContactSection({ darkMode, language = "en" }) {
                     : "bg-[#e9ecef] hover:bg-[#6366f1] hover:text-white"
                 }`}
               >
-                <i className="fab fa-github"></i>
+                <Github/>
               </a>
               <a
                 href="https://www.linkedin.com/in/lova-mionitra-9177002aa/"
@@ -150,7 +151,7 @@ export default function ContactSection({ darkMode, language = "en" }) {
                     : "bg-[#e9ecef] hover:bg-[#6366f1] hover:text-white"
                 }`}
               >
-                <i className="fab fa-linkedin-in"></i>
+                <Linkedin />
               </a>
               <a
                 href="https://www.facebook.com/younah.yzuki"
@@ -160,7 +161,7 @@ export default function ContactSection({ darkMode, language = "en" }) {
                     : "bg-[#e9ecef] hover:bg-[#6366f1] hover:text-white"
                 }`}
               >
-                <i className="fab fa-facebook"></i>
+                <Facebook/>
               </a>
             </div>
           </div>

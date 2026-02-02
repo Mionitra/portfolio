@@ -199,7 +199,7 @@ export default function SkillsSection({ darkMode, language = 'en' }) {
     <section id="skills" className={`py-20 ${darkMode ? 'bg-[#0f172a]' : 'bg-[#f0fff1]'}`}>
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold mb-8 text-center">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-500">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500">
             {translations[language].title}
           </span>
         </h2>
@@ -215,7 +215,7 @@ export default function SkillsSection({ darkMode, language = 'en' }) {
               }}
               className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
                 activeCategory === category
-                  ? 'bg-gradient-to-r from-purple-600 to-blue-500 text-white shadow-lg scale-105'
+                  ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-lg scale-105'
                   : darkMode
                   ? 'bg-[#1e293b] text-gray-300 hover:bg-[#334155]'
                   : 'bg-white text-gray-700 hover:bg-gray-100'
@@ -333,7 +333,7 @@ export default function SkillsSection({ darkMode, language = 'en' }) {
                     onClick={() => goToSlide(index)}
                     className={`transition-all duration-300 rounded-full ${
                       currentIndex === index
-                        ? 'w-8 h-2 bg-gradient-to-r from-purple-600 to-blue-500'
+                        ? 'w-8 h-2 bg-gradient-to-r from-blue-600 to-cyan-500'
                         : darkMode
                         ? 'w-2 h-2 bg-gray-600 hover:bg-gray-500'
                         : 'w-2 h-2 bg-gray-300 hover:bg-gray-400'

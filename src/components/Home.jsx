@@ -6,6 +6,7 @@ import ProjectsSection from './ProjectsSection';
 import ContactSection from './ContactSection';
 import Footer from './Footer';
 import HorizontalScroll from './HorizontalScroll';
+import TextReveal from './texts/TextReveal';
 
 const Home = () => {
   const [darkMode, setDarkMode] = useState(false);

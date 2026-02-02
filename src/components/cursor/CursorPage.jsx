@@ -29,7 +29,7 @@ const CursorPage = ({ language = 'en' }) => {
                 <div 
                     className="w-3/4 text-white text-center lg:text-5xl text-2xl leading-relaxed lg:leading-[100px]"
                 >
-                    {translations[language]}
+                    {language === 'fr' ? translations.fr : translations.en}
                 </div>
                 <CursorEffect x={x} y={y} />
             </div>

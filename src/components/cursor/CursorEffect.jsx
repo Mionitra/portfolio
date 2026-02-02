@@ -13,8 +13,8 @@ const CursorEffect = styled.div.attrs(props => ({
     position: absolute;
     border-radius: 100%;
     mix-blend-mode: difference;
-    width: 300px;
-    height: 300px;
+    width: 100px;
+    height: 100px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);

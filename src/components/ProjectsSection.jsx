@@ -14,7 +14,7 @@ export default function ProjectsSection({ darkMode, language = 'en' }) {
     <section id="projects" className={`py-20 ${darkMode ? 'bg-[#1e293b]' : 'bg-[#e9ecef]'}`}>
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold mb-16 text-center">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-500">{language === 'fr' ? 'Projets sélectionnés' : 'Selected Projects'}</span>
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500">{language === 'fr' ? 'Projets personnels' : 'Personnal projects'}</span>
         </h2>
         
         <div className="flex justify-center mb-10 flex-wrap gap-4">

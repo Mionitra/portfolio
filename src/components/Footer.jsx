@@ -1,3 +1,4 @@
+import { ArrowUp } from 'lucide-react';
 import React from 'react';
 
 export default function Footer({ darkMode, language = 'en' }) {
@@ -23,7 +24,7 @@ export default function Footer({ darkMode, language = 'en' }) {
         href="#home" 
         className={`fixed bottom-6 right-6 w-12 h-12 rounded-full flex items-center justify-center transition-colors duration-200 cursor-pointer ${darkMode ? 'bg-[#818cf8] text-white' : 'bg-[#6366f1] text-white'} shadow-lg`}
       >
-        <i className="fas fa-arrow-up"></i>
+        <ArrowUp/>
       </a>
     </footer>
   );

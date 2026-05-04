@@ -41,6 +41,16 @@ const skillsData = (language = 'en') => [
       : ['Semantic HTML', 'Accessibility', 'SEO']
   },
   {
+    name: 'GSAP',
+    category: 'frontend',
+    proficiency: 70,
+    icon: 'Code2',
+    iconColor: 'text-green-500',
+    keySkills: language === 'fr'
+      ? ['Animations', 'Timeline', 'ScrollTrigger']
+      : ['Animations', 'Timelines', 'ScrollTrigger']
+  },
+  {
     name: 'CSS3',
     category: 'frontend',
     proficiency: 90,

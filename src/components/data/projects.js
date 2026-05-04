@@ -32,7 +32,7 @@ const projectsHackathon = [
       description: "Browse and buy cars with a user-friendly interface, showcasing detailed listings and images.",
       technologies: ["React", "Scss", "TailwindCSS", "Django"],
       image: "/media/images/cc.png",
-      liveLink: "#",
+      liveLink: "https://youtu.be/ceyeqeufovM",
       githubLink: "https://github.com/Mionitra/pre-hack"
     },
     {
@@ -43,7 +43,16 @@ const projectsHackathon = [
       image: "/media/images/java.png",
       liveLink: "#",
       githubLink: "https://github.com/Mionitra/java-swing"
-    }
+    },
+    {
+      id: 5,
+      title: "To do Application",
+      description: "Blend strategy, design, and technology to build digital products that stand out in a crowded world.",
+      technologies: ["Java Swing", "Java"],
+      image: "/media/images/studio-design.png",
+      liveLink: "https://youtu.be/CODXnuHZIUA",
+      githubLink: "https://github.com/Mionitra/studio-design.git"
+    },
   ];
 
   export default projectsHackathon;

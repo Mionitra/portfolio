@@ -48,7 +48,7 @@ const projectsHackathon = [
       id: 5,
       title: "To do Application",
       description: "Blend strategy, design, and technology to build digital products that stand out in a crowded world.",
-      technologies: ["Java Swing", "Java"],
+      technologies: ["React", "Tailwindcss", "GSAP"],
       image: "/media/images/studio-design.png",
       liveLink: "https://youtu.be/CODXnuHZIUA",
       githubLink: "https://github.com/Mionitra/studio-design.git"

@@ -7,6 +7,9 @@ import ContactSection from './ContactSection';
 import Footer from './Footer';
 import HorizontalScroll from './HorizontalScroll';
 import TextReveal from './texts/TextReveal';
+import CertificationsSection from './CertificationsSection';
+import CursorPage from './cursor/CursorPage';
+import HackathonPortfolio from './HackathonPortfolio';
 
 const Home = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -63,20 +66,28 @@ const Home = () => {
           ))}
         </div>
       </div>
-      
+
       {/* Header container: sticky so layout space is preserved; hide by translating up */}
       <div className={`sticky top-0 left-0 z-50 transition-transform duration-300 ${showHeader ? 'translate-y-0 pointer-events-auto' : '-translate-y-full pointer-events-none'}`}>
         <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} language={lang} setLanguage={setLang} />
       </div>
-      
+
       <HeroSection darkMode={darkMode} language={lang} />
       <SkillsSection darkMode={darkMode} language={lang} />
       <ProjectsSection darkMode={darkMode} language={lang} />
-      <HorizontalScroll darkMode={darkMode} language={lang} />
+      <div className="hidden lg:block">
+        <HorizontalScroll darkMode={darkMode} language={lang} />
+      </div>
+
+      <div className="block lg:hidden">
+        <CertificationsSection darkMode={darkMode} language={lang} />
+        <CursorPage language={lang} />
+        <HackathonPortfolio darkMode={darkMode} language={lang} />
+      </div>
       <ContactSection darkMode={darkMode} language={lang} />
       <Footer darkMode={darkMode} language={lang} />
-      
-      
+
+
       {/* Custom cursor */}
       <style jsx>{`
         @keyframes float {

@@ -36,7 +36,7 @@ export default function CertificationsSection({ darkMode = true, language = 'en'
 
   const ModalContent = () => (
     <div 
-      className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/95 backdrop-blur-sm animate-fadeIn min-h-screen"
+      className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/95 backdrop-blur-sm animate-fadeIn min-h-screen md:h-screen"
       style={{ left: 0, right: 0, top: 0, bottom: 0, width: '100vw', height: '100vh' }}
       onClick={() => setSelectedCert(null)}
     >
@@ -79,7 +79,7 @@ export default function CertificationsSection({ darkMode = true, language = 'en'
 
   return (
     <>
-      <div className={`py-20 px-4 ${darkMode ? 'bg-gradient-to-b from-gray-900 to-black' : 'bg-gradient-to-b from-gray-50 to-white'} overflow-hidden`}>
+      <div className={`py-20 px-4 overflow-hidden`}>
         <div className="max-w-7xl mx-auto">
           {/* Titre */}
           <h2 className={`text-4xl md:text-5xl font-bold text-center mb-6 ${darkMode ? 'text-white' : 'text-gray-900'}`}>

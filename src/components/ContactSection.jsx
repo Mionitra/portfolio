@@ -3,47 +3,7 @@ import React from "react";
 import { useState } from "react";
 
 export default function ContactSection({ darkMode, language = "en" }) {
-  const [form, setForm] = useState({ nom: "", email: "", message: "" });
-  const [status, setStatus] = useState(null);
-  const [showPopup, setShowPopup] = useState(false);
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus(null);
-    try {
-      const response = await fetch("http://localhost:8000/email/contact/", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      if (response.ok) {
-        setStatus("success");
-        setForm({ nom: "", email: "", message: "" });
-      } else {
-        setStatus("error");
-        const data = await response.json();
-        if (data && data.errors) {
-          const errors = Object.values(data.errors)
-            .map((arr) => arr.join(" "))
-            .join(" ");
-          setErrorMsg(errors);
-        } else if (data && data.detail) {
-          setErrorMsg(data.detail);
-        } else {
-          setErrorMsg("Erreur inconnue.");
-        }
-      }
-    } catch {
-      setStatus("error");
-      setErrorMsg("Erreur réseau ou serveur : " + err.message);
-    }
-    setShowPopup(true);
-    setTimeout(() => setShowPopup(false), 3000);
-  };
 
   return (
     <section
@@ -144,7 +104,7 @@ export default function ContactSection({ darkMode, language = "en" }) {
                 <Github/>
               </a>
               <a
-                href="https://www.linkedin.com/in/lova-mionitra-9177002aa/"
+                href="www.linkedin.com/in/lova-mionitra-rakotondradaoro-441954395/"
                 className={`w-12 h-12 rounded-full flex items-center justify-center transition-colors duration-200 cursor-pointer ${
                   darkMode
                     ? "bg-[#1e293b] hover:bg-[#818cf8] hover:text-white"

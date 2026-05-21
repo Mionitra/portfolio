@@ -28,7 +28,7 @@ export default function ProjectsSection({ darkMode, language = 'en' }) {
             All
           </button>
           
-          {['React', 'Java', 'Django', 'TailwindCSS'].map((tech, index) => (
+          {['React', 'Java', 'Django', 'TailwindCSS', 'GSAP', 'Angular', 'Nestjs'].map((tech, index) => (
             <button 
               key={index}
               onClick={() => setActiveFilter(tech)} 

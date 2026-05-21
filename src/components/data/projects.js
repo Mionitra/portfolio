@@ -30,7 +30,7 @@ const projectsHackathon = [
       id: 4,
       title: "Cars Marketplace",
       description: "Browse and buy cars with a user-friendly interface, showcasing detailed listings and images.",
-      technologies: ["React", "Scss", "TailwindCSS", "Django"],
+      technologies: ["React", "GSAP", "TailwindCSS"],
       image: "/media/images/cc.png",
       liveLink: "https://youtu.be/ceyeqeufovM",
       githubLink: "https://github.com/Mionitra/pre-hack"
@@ -46,12 +46,21 @@ const projectsHackathon = [
     },
     {
       id: 5,
-      title: "To do Application",
+      title: "Studio Design",
       description: "Blend strategy, design, and technology to build digital products that stand out in a crowded world.",
       technologies: ["React", "Tailwindcss", "GSAP"],
       image: "/media/images/studio-design.png",
       liveLink: "https://youtu.be/CODXnuHZIUA",
       githubLink: "https://github.com/Mionitra/studio-design.git"
+    },
+    {
+      id: 6,
+      title: "JobBoard",
+      description: "Job portal with Angular and Nest js",
+      technologies: ["Angular", "Scss", "Nestjs", "MongoDB"],
+      image: "/media/images/jobboard.png",
+      liveLink: "https://drive.google.com/file/d/1qaH9NQ-RtuifMx-xMiTmy23BrjlAfJPt/view?usp=sharing",
+      githubLink: "https://github.com/Mionitra/job-board-project.git"
     },
   ];
 

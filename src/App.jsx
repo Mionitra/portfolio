@@ -1,12 +1,20 @@
-import React from 'react'
-import Home from './components/Home'
+import { lazy, Suspense } from 'react'
+import { ThemeProvider } from '@/context/ThemeContext'
+import { LanguageProvider } from '@/context/LanguageContext'
+import ErrorBoundary from '@/components/ui/ErrorBoundary'
 
-const App = () => {
+const MainLayout = lazy(() => import('@/components/layout/MainLayout'))
+
+export default function App() {
   return (
-    <>
-      <Home/>
-    </>
+    <ThemeProvider>
+      <LanguageProvider>
+        <ErrorBoundary>
+          <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-slate-950 text-white text-xl">Loading...</div>}>
+            <MainLayout />
+          </Suspense>
+        </ErrorBoundary>
+      </LanguageProvider>
+    </ThemeProvider>
   )
 }
-
-export default App
